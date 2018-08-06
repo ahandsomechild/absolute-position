@@ -1,21 +1,43 @@
-# absolute-position
+##  签署位置 - 百分比
 
-> A Vue.js project
+#### 项目安装与启动
 
-## Build Setup
+    npm install
+    npm run dev
+    
 
-``` bash
-# install dependencies
-npm install
+#### 有关项目的几点说明
 
-# serve with hot reload at localhost:8080
-npm run dev
+1.中间部分的合同为一张A4纸大小 
+      
+           imgH: 978；imgW: 649,    
 
-# build for production with minification
-npm run build
+ 2.签署位置相对的原点是中间这张A4纸的左上角
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+3.签章区域的大小设置为A4的百分比大小
+ 
+    signH: 97.8,         //签名的高度 a4纸高度的0.1
+    signW: 162.25,       //签名的宽度a4纸宽度的0.25
+    
+4.项目中显示的为签章左下角的百分比坐标，右上角坐标(百分比)为
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+    (x+0.25，y-0.1)
+    
+5.边缘情况需注意，不要将拖动时出现的绿色加号拖离A4纸太远，这样就没有用啦！
+
+6.不能跨页面拖动！
+
+
+#### 实现思路
+
+> 开始从右侧放置签章
+
+    请看 signclc 函数
+    
+>在合同上拖动改变签章位置
+
+    请看 droparea 函数
+    
+#### 就酱紫，ending!
+
+    

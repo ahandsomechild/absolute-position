@@ -212,8 +212,8 @@
           } else signObj.limity = e.offsetY-this.signH/2;
 
         }
-        signObj.limitx = (signObj.limitx/this.imgW)
-        signObj.limity = (signObj.limity/this.imgH+0.1)
+        signObj.limitx = (signObj.limitx/this.imgW).toFixed(2)
+        signObj.limity = (signObj.limity/this.imgH+0.1).toFixed(2)
         console.log(signObj)
         this.imgs[this.actived].signs.push(signObj)
         if (!this.imgs[this.actived].isSigned) {
@@ -264,26 +264,7 @@
        * @param index
        * @param e
        */
-      // dragend(index, e) {
-      //   //x轴移动距离
-      //   let xlen = e.pageX - this.pageX
-      //   //y轴移动距离
-      //   let ylen = e.pageY - this.pageY
-      //   console.log('x轴移动距离:'+xlen, 'y轴移动距离'+ylen);
-      //   if (xlen + this.draged.limitx >= this.imgW - this.signW) {
-      //     this.draged.limitx = this.imgW - this.signW
-      //   } else if (xlen + this.draged.limitx <= 0) {
-      //     this.draged.limitx = 0
-      //   } else this.draged.limitx = xlen/this.imgW + this.draged.limitx
-      //   if (ylen + this.draged.limity > this.imgH - this.signH) {
-      //     this.draged.limity = this.imgH - this.signH
-      //   } else if (ylen + this.draged.limity <= 0) {
-      //     this.draged.limity = 0
-      //   } else this.draged.limity = ylen/this.imgH + this.draged.limity
-      //   this.imgs[this.actived].signs[index].limitx = this.draged.limitx
-      //   this.imgs[this.actived].signs[index].limity = this.draged.limity
-      //   // console.log(this.draged)
-      // },
+      
       draging (index, e) {
 
       },
@@ -309,8 +290,8 @@
             this.draged.limity = 0.1
           } else this.draged.limity = (ylen + this.draged.limity * this.imgH)/this.imgH;
           //转换百分比----------------
-          this.draged.limitx = this.draged.limitx;
-          this.draged.limity = this.draged.limity;
+          this.draged.limitx = this.draged.limitx.toFixed(2);
+          this.draged.limity = this.draged.limity.toFixed(2);
           console.log(this.draged)
 
           this.imgs[this.actived].signs[this.draged.index].limitx = this.draged.limitx
