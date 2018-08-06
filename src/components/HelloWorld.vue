@@ -285,7 +285,7 @@
           } else this.draged.limitx =(xlen + this.draged.limitx * this.imgW)/this.imgW;
 
           if (ylen + this.draged.limity * this.imgH  > this.imgH) {
-            this.draged.limity = 1.00
+            this.draged.limity = 1
           } else if (ylen + this.draged.limity * this.imgH <= this.signH) {
             this.draged.limity = 0.1
           } else this.draged.limity = (ylen + this.draged.limity * this.imgH)/this.imgH;
